@@ -72,10 +72,6 @@ Simulate a bank transaction system with logging and error handling.
 - Catch exceptions and log errors
 - Invoke callback block with success/failure message
 
-### 🧪 Example Terminal Output:
-
----
-
 ## 🚀 How to Run
 
 bash
