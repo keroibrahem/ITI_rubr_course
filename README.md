@@ -1,56 +1,64 @@
 # ITI_rubr_course
-# Day 1 Ruby Inventory Lab
+# Ruby Bank Transaction Logger
 
 ## Overview
 
-This project is a simple **Book Inventory Management System** built with Ruby as part of the ITI Ruby Course (Day 1 Task).  
-It allows users to manage a collection of books, with all data persisted in a text file.
+This project demonstrates a simple **banking system** in Ruby that processes user transactions and logs all important events to a file.  
+It showcases the use of Ruby modules, dynamic method definition, OOP concepts, and file-based logging.
 
 ---
 
 ## Features
 
-- **Add a new book** (with title, author, and ISBN)
-- **Remove a book** by ISBN
-- **List all books**
-- **Search** for a book by title, author, or ISBN
-- **Sort books** by ISBN
-- **Persistent storage**: All books are saved to and loaded from a file (`Books.txt`)
-- **Input validation** and user-friendly messages
+- **User and Transaction Management:**  
+  - Each user has a name and balance.
+  - Transactions can be positive (deposit) or negative (withdrawal).
+
+- **Bank Processing:**  
+  - The bank processes a list of transactions for its users.
+  - Handles cases where the user does not exist or has insufficient balance.
+
+- **Logging System:**  
+  - Custom `Logger` module dynamically creates logging methods (`log_info`, `log_warning`, `log_error`).
+  - All logs are written to `app.log` with timestamps and log levels.
+
+- **Callbacks:**  
+  - Supports passing a block to handle transaction results (e.g., simulating API calls).
 
 ---
 
 ## How It Works
 
-- The program loads all books from `Books.txt` at startup.
-- Users interact with a simple menu in the terminal to add, remove, search, or list books.
-- When a book is added, the program checks for duplicate ISBNs.
-- All changes are automatically saved to the file.
-- The code is organized into two main classes:
-  - `Book`: Represents a single book.
-  - `Inventory`: Manages the collection of books and handles file operations.
+- The `Logger` module uses metaprogramming to define log methods for different log levels.
+- The `CBABank` class includes the logger and manages users and their transactions.
+- When processing transactions:
+  - If the user is not found, an error is logged.
+  - If the transaction would result in a negative balance, an error is logged.
+  - If the balance becomes zero, a warning is logged.
+  - Otherwise, the transaction is processed and the balance is updated.
+- All important events are logged to `app.log`.
 
 ---
 
 ## File Structure
 
-- `books.rb` &nbsp;&nbsp;&nbsp;&nbsp;→ Main Ruby script (contains all logic and menu)
-- `Books.txt` &nbsp;&nbsp;&nbsp;&nbsp;→ Data file for storing books (acts as a simple database)
+- `log_message.rb` &nbsp;&nbsp;&nbsp;&nbsp;→ Main Ruby script (contains all classes and logic)
+- `app.log` &nbsp;&nbsp;&nbsp;&nbsp;→ Log file generated during execution
 
 ---
 
 ## How to Run
 
 1. Make sure you have Ruby installed.
-2. Place `books.rb` and `Books.txt` in the same directory.
-3. Run the program:
+2. Run the script:
    ```sh
-   ruby books.rb
+   ruby log_message.rb
    ```
+3. Check the `app.log` file for logged events.
 
 ---
 
 ## Author
 
-- [Your Name]
-- ITI Ruby Course – Day 1
+- kerolos ibrahem
+- ITI Ruby Course – Day 2

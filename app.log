@@ -1,0 +1,9 @@
+2025-06-01T00:22:11+03:00 -- warning -- Ali has 0 balance
+2025-06-01T00:22:11+03:00 -- error -- User Ali transaction with value -100 failed with message Not enough balance
+2025-06-01T00:22:11+03:00 -- error -- User Menna transaction with value -100 failed with message Menna not exist in the bank!!
+2025-06-01T00:22:11+03:00 -- error -- User Ali transaction with value -20 failed with message Not enough balance
+2025-06-01T00:22:11+03:00 -- error -- User Ali transaction with value -30 failed with message Not enough balance
+2025-06-01T00:22:11+03:00 -- error -- User Ali transaction with value -50 failed with message Not enough balance
+2025-06-01T00:22:11+03:00 -- error -- User Ali transaction with value -100 failed with message Not enough balance
+2025-06-01T00:22:11+03:00 -- error -- User Ali transaction with value -100 failed with message Not enough balance
+2025-06-01T00:22:11+03:00 -- error -- User Menna transaction with value -100 failed with message Menna not exist in the bank!!
