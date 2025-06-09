@@ -1,0 +1,68 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Header -->
+
+
+  <!-- Products Grid -->
+  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <% if @products.any? %>
+      <div id="products" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <% @products.each do |product| %>
+          <div class="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow duration-200 ease-in-out">
+            <div class="p-6">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-4 flex-1">
+                  <h3 class="text-lg font-medium text-gray-900 truncate">
+                    <%= link_to product.name, product, class: "hover:text-blue-600 transition-colors duration-150 ease-in-out" %>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="mt-4 flex justify-between items-center">
+                <%= link_to product, class: "text-blue-600 hover:text-blue-500 text-sm font-medium" do %>
+                  View details →
+                <% end %>
+
+                <div class="flex space-x-2">
+                  <%= link_to edit_product_path(product),
+                      class: "text-gray-400 hover:text-gray-500",
+                      title: "Edit" do %>
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <!-- Empty State -->
+      <div class="text-center py-12">
+        <div class="mx-auto h-24 w-24 text-gray-400">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="h-24 w-24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+          </svg>
+        </div>
+        <h3 class="mt-4 text-lg font-medium text-gray-900">No products yet</h3>
+        <p class="mt-2 text-sm text-gray-500">Get started by creating your first product.</p>
+        <div class="mt-6">
+          <%= link_to new_product_path,
+              class: "inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" do %>
+            <svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+            New Product
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
